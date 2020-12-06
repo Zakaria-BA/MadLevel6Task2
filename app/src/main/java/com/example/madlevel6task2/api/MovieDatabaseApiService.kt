@@ -2,10 +2,11 @@ package com.example.madlevel6task2.api
 
 import com.example.madlevel6task2.Model.Movie
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 
 interface MovieDatabaseApiService {
 
-    @GET()
-    suspend fun getMovies(): List<Movie>
+    @GET("3/discover/movie?api_key=e952a2ed50e8f0a42cda74061fc1d4a2&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1")
+    suspend fun getMovies(@Query("year") year: Int): List<Movie>
 }
